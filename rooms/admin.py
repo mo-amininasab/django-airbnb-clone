@@ -6,6 +6,7 @@ from . import models
 class RoomAdmin(admin.ModelAdmin):
   '''Room Admin Definition '''
 
+  ordering = ['name', 'price']
   fieldsets = [('Basic Info', {
       'fields': [
           'name',
@@ -50,6 +51,7 @@ class RoomAdmin(admin.ModelAdmin):
       'check_in',
       'check_out',
       'instant_book',
+      'count_amenities',
   ]
   list_filter = [
       'instant_book',
@@ -68,6 +70,9 @@ class RoomAdmin(admin.ModelAdmin):
       'facilities',
       'house_rule',
   ]
+
+  def count_amenities(self, obj):
+    return obj.amenities.count()
 
 
 @admin.register(models.RoomType, models.Facility, models.Amenity,
