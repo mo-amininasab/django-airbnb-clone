@@ -38,6 +38,7 @@ class RoomAdmin(admin.ModelAdmin):
                        'host',
                    ]
                })]
+
   list_display = [
       'name',
       'country',
@@ -53,7 +54,9 @@ class RoomAdmin(admin.ModelAdmin):
       'instant_book',
       'count_amenities',
       'count_photos',
+      'total_rating',
   ]
+
   list_filter = [
       'instant_book',
       'host__superhost',
@@ -65,6 +68,7 @@ class RoomAdmin(admin.ModelAdmin):
       'city',
       'country',
   ]
+
   search_fields = ['city', '^host__username']
   filter_horizontal = [
       'amenities',
