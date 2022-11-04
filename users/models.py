@@ -37,8 +37,13 @@ class User(AbstractUser):
   birthdate = models.DateField(blank=True, null=True)
   language = models.CharField(choices=LANGUAGE_CHOICES,
                               max_length=2,
-                              blank=True, null=True)
+                              blank=True,
+                              null=True)
   currency = models.CharField(choices=CURRENCY_CHOICES,
                               max_length=3,
-                              blank=True, null=True)
+                              blank=True,
+                              null=True)
   superhost = models.BooleanField(default=False)
+
+  def __str__(self):
+    return self.username
