@@ -9,6 +9,9 @@ media
 # test
 test.ipynb
 
+# uploads
+uploads
+
 # Backup files # 
 *.bak 
 
