@@ -2,10 +2,14 @@ from django.contrib import admin
 from django.utils.html import mark_safe
 from . import models
 
+class PhotoInline(admin.TabularInline):
+    model = models.Photo
 
 @admin.register(models.Room)
 class RoomAdmin(admin.ModelAdmin):
   '''Room Admin Definition '''
+
+  inlines = [PhotoInline]
 
   ordering = ['name', 'price']
   fieldsets = [('Basic Info', {
