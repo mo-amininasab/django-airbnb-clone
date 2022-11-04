@@ -3,7 +3,7 @@ from rooms.models import Amenity
 
 
 class Command(BaseCommand):
-  print('hello')
+  help = 'This command creates amenities'
 
   def handle(self, *args, **options):
     amenities = [
@@ -21,4 +21,5 @@ class Command(BaseCommand):
     ]
     for a in amenities:
       Amenity.objects.create(name=a)
-    self.stdout.write(self.style.SUCCESS('Amenities created!'))
+    self.stdout.write(
+        self.style.SUCCESS(f'{len(amenities)} amenities created!'))
