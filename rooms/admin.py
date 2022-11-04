@@ -2,8 +2,10 @@ from django.contrib import admin
 from django.utils.html import mark_safe
 from . import models
 
+
 class PhotoInline(admin.TabularInline):
-    model = models.Photo
+  model = models.Photo
+
 
 @admin.register(models.Room)
 class RoomAdmin(admin.ModelAdmin):
@@ -88,6 +90,8 @@ class RoomAdmin(admin.ModelAdmin):
 
   def count_photos(self, obj):
     return obj.photos.count()
+
+  count_photos.short_description = 'Photo Count'
 
 
 @admin.register(models.RoomType, models.Facility, models.Amenity,
