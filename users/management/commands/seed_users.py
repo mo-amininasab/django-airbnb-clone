@@ -19,7 +19,6 @@ class Command(BaseCommand):
         'is_staff': False,
         'is_superuser': False,
     })
-    # print('number: ', number)
     seeder.execute()
 
     self.stdout.write(self.style.SUCCESS(f'{number} users created!'))
