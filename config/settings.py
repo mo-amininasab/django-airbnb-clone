@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,22 +29,36 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-DJANGO_APPS = [
+# DJANGO_APPS = [
+#     "django.contrib.admin",
+#     "django.contrib.auth",
+#     "django.contrib.contenttypes",
+#     "django.contrib.sessions",
+#     "django.contrib.messages",
+#     "django.contrib.staticfiles",
+# ]
+
+# THIRD_PARTY_APPS = ['django_countries']
+
+# PROJECT_APPS = [
+#     'users.apps.UsersConfig',
+#     'rooms.apps.RoomsConfig',
+#     'core.apps.CoreConfig',
+# ]
+
+# INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-]
-
-THIRD_PARTY_APPS = []
-
-PROJECT_APPS = [
     'users.apps.UsersConfig',
+    'rooms.apps.RoomsConfig',
+    'core.apps.CoreConfig',
+    'django_countries',
 ]
-
-INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
