@@ -33,12 +33,12 @@ class User(AbstractUser):
 
   avatar = models.ImageField(blank=True)
   gender = models.CharField(max_length=10, blank=True, choices=GENDER_CHOICES)
-  bio = models.TextField(blank=True)
-  birthdate = models.DateField(blank=True)
+  bio = models.TextField(blank=True, null=True)
+  birthdate = models.DateField(blank=True, null=True)
   language = models.CharField(choices=LANGUAGE_CHOICES,
                               max_length=2,
-                              blank=True)
+                              blank=True, null=True)
   currency = models.CharField(choices=CURRENCY_CHOICES,
                               max_length=3,
-                              blank=True)
+                              blank=True, null=True)
   superhost = models.BooleanField(default=False)

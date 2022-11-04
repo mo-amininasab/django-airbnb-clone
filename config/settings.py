@@ -29,36 +29,36 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-# DJANGO_APPS = [
-#     "django.contrib.admin",
-#     "django.contrib.auth",
-#     "django.contrib.contenttypes",
-#     "django.contrib.sessions",
-#     "django.contrib.messages",
-#     "django.contrib.staticfiles",
-# ]
-
-# THIRD_PARTY_APPS = ['django_countries']
-
-# PROJECT_APPS = [
-#     'users.apps.UsersConfig',
-#     'rooms.apps.RoomsConfig',
-#     'core.apps.CoreConfig',
-# ]
-
-# INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
-INSTALLED_APPS = [
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+]
+
+THIRD_PARTY_APPS = ['django_countries']
+
+PROJECT_APPS = [
     'users.apps.UsersConfig',
     'rooms.apps.RoomsConfig',
     'core.apps.CoreConfig',
-    'django_countries',
 ]
+
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
+# INSTALLED_APPS = [
+#     "django.contrib.admin",
+#     "django.contrib.auth",
+#     "django.contrib.contenttypes",
+#     "django.contrib.sessions",
+#     "django.contrib.messages",
+#     "django.contrib.staticfiles",
+#     'users.apps.UsersConfig',
+#     'rooms.apps.RoomsConfig',
+#     'core.apps.CoreConfig',
+#     'django_countries',
+# ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
