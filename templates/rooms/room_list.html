@@ -3,8 +3,11 @@
 {% block page_name %}Home{% endblock page_name %}
 
 {% block content %}
-  {% for room in rooms.object_list %}
-    <h1>{{room.name}} / ${{room.price}}</h1>
+  {% for room in object_list %}
+      <a href="{% url 'rooms:detail' room.pk %}">
+        <h4>{{room.name}} / ${{room.price}}
+      </a>
+    </h4>
   {% endfor %}
 
   <h5>
