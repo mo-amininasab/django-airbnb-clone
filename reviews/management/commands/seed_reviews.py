@@ -1,6 +1,5 @@
 from django.core.management.base import BaseCommand
 from django_seed import Seed
-from django.contrib.admin.utils import flatten
 from rooms import models as room_models
 from users import models as user_models
 from reviews import models as review_models
@@ -8,14 +7,14 @@ import random
 
 
 class Command(BaseCommand):
-  help = 'This command creates many users'
+  help = 'This command creates many reviews'
 
   def add_arguments(self, parser):
     parser.add_argument(
         '--number',
         default=1,  # not working???
         type=int,
-        help='How many users do you want to create')
+        help='How many reviews do you want to create')
 
   def handle(self, *args, **options):
     number = options.get('number')
