@@ -1,6 +1,9 @@
 from django.views.generic import ListView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.http import Http404
 from rooms import models as room_models
+
 
 class HomeView(ListView):
   model = room_models.Room
@@ -10,7 +13,5 @@ class HomeView(ListView):
   # page_kwarg = 'potato'
   context_object_name = 'rooms'
 
-def room_detail(request, pk):
-  return render(request, 'rooms/detail.html', {})
 
-  
+or make it more professional
